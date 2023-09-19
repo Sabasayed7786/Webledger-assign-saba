@@ -9,7 +9,7 @@ const path=require("path");
 
 
 const connectDB = require("./db/connect")
-const corsconfig = { origin: true, credentials: true };
+const corsconfig = { origin: 'true', credentials: true };
 app.use(express.json());
 const _dirname=path.dirname("")
 const buildpath = path.join(_dirname,"../client/build")
@@ -25,15 +25,15 @@ const PORT = process.env.PORT || 5000
 connectDB(process.env.MONGODB_URI)
 
 
-app.get('/', (req, res) => {
-    res.redirect('/login');
+app.get('/api', (req, res) => {
+    res.redirect('/api/login');
   });
 
-app.get('/login',(req, res) =>{
+app.get('/api/login',(req, res) =>{
     res.send("Login Page")
 })
 
-app.get("/register", (req, res) => {
+app.get("/api/register", (req, res) => {
     res.send(`User Register`);
   });
 

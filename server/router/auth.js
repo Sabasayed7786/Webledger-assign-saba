@@ -10,7 +10,7 @@ const User = require("../models/userSchema");
 
 
 
-router.post("/register", async (req, res) => {
+router.post("/api/register", async (req, res) => {
   const { name, email,  password, cpassword } = req.body;
 
   if (!name || !email || !password || !cpassword) {
@@ -45,7 +45,7 @@ router.post("/register", async (req, res) => {
 
 //login route 
 
-router.post("/login", async (req, res) => {
+router.post("/api/login", async (req, res) => {
   try {
     let token;
     const { email, password } = req.body;
@@ -84,7 +84,7 @@ router.post("/login", async (req, res) => {
 
 //user page
 
-router.get("/recipe", authenticate, async (req, res) => {
+router.get("/api/recipe", authenticate, async (req, res) => {
   try {
     const { query } = req.query;
 
@@ -120,7 +120,7 @@ router.get("/recipe", authenticate, async (req, res) => {
 
 
 // Define a route to fetch recipe details
-router.get('/recipe-details/:id', async (req, res) => {
+router.get('/api/recipe-details/:id', async (req, res) => {
   const { id } = req.params;
   const apiKey = process.env.SPOONACULAR_API_KEY; // Replace with your API key
   const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`;
@@ -141,7 +141,7 @@ router.get('/recipe-details/:id', async (req, res) => {
 //   res.send(req.rootUser);
 // });
 
-router.get("/logout", (req, res) => {
+router.get("/api/logout", (req, res) => {
   console.log(`Hello logout`);
   res.clearCookie("jwtoken", { path: "/" });
   res.status(200).send(`User Logout`);
