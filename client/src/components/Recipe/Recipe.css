@@ -1,0 +1,68 @@
+/* Recipe card container */
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width as needed */
+    grid-gap: 20px;
+  }
+  
+  /* Individual recipe card */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Add a hover effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover */
+  }
+  
+  /* Recipe image */
+  .card-img-top {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Card body */
+  .card-body {
+    padding: 16px;
+  }
+  
+  /* Card title */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Card text (recipe ID and image type) */
+  .card-text {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+
+ 
+
+/* Style for the search input */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+.recipe-search{
+  text-align: center;
+  margin: 20px auto; /* Center the container horizontally */
+  max-width: 600px;
+}
+/* Style for the search button when hovering */
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover, you can change it */
+}
