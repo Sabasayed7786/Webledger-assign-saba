@@ -2,6 +2,7 @@ import Navbar from '../Navbar/Navbar';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Recipe.css';
+import BASE_URL from '../../config/config';
 
 const Recipe = () => {
   const [data, setData] = useState(null);
@@ -19,7 +20,7 @@ const Recipe = () => {
   const fetchData = async (searchQuery) => {
     try {
       // Make a GET request to your backend API endpoint with the searchQuery
-      const response = await axios.get(`/recipe?query=${searchQuery || ''}`); // Pass the searchQuery to the API
+      const response = await axios.get(`/api/recipe?query=${searchQuery || ''}`); // Pass the searchQuery to the API
 
       // Update the data state with the response data
       setData(response.data);

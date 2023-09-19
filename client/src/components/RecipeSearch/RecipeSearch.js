@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import BASE_URL from '../../config/config';
 
 const RecipeSearch = () => {
   const [query, setQuery] = useState('');
@@ -11,7 +12,7 @@ const RecipeSearch = () => {
       setLoading(true);
 
       // Make a GET request to your backend API with the query as a parameter
-      const response = await axios.get(`/recipe?query=${query}`);
+      const response = await axios.get(`/api/recipe?query=${query}`);
 
       // Update the recipes state with the response data
       setRecipes(response.data.recipes);

@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../../config/config';
 
 
 const Logout = () => {
@@ -7,7 +8,7 @@ const Logout = () => {
     const navigate =useNavigate();
 
  useEffect(() =>{
-fetch('/logout',{
+fetch('/api/logout',{
     method:"GET",
     headers:{
         Accept:"application/json",
