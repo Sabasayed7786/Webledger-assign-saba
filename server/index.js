@@ -5,11 +5,15 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 const bodyParser = require('body-parser');
+const path=require("path");
 
 
 const connectDB = require("./db/connect")
 const corsconfig = { origin: true, credentials: true };
 app.use(express.json());
+const _dirname=path.dirname("")
+const buildpath = path.join(_dirname,"../client/build")
+app.use(express.static(buildpath));
 app.use(cors(corsconfig));
 app.options("*", cors());
 
